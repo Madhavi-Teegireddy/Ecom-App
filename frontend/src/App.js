@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import AllRoutes from './Routes/AllRoutes';
+
 
 function App() {
   return (
     <>
-      <h1>Hello Ecommerce app</h1>
+      <AllRoutes/>
     </>
   );
 }
