@@ -1,9 +1,9 @@
-import userModel from "../models/userModel"
-
+import userModel from "../models/userModel.js"
+import { hashPassword } from "../helpers/authHelper.js";
 
 export const registerController = async(req,res) => {
   try {
-    const { name, email, password, phone, address, answer } = req.body;
+    const { name, email, password, phone, address } = req.body;
     //validations
     if (!name) {
       return res.send({ error: "Name is Required" });
