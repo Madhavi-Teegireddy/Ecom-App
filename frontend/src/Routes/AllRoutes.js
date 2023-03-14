@@ -6,6 +6,7 @@ import About from '../Pages/About';
 import Contact from '../Pages/Contact';
 import Policy from '../Pages/Policy';
 import PageNotFound from '../Pages/PageNotFound';
+import Register from '../Pages/Auth/Register';
 
 
 const AllRoutes = () => {
