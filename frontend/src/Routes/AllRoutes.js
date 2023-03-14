@@ -10,6 +10,7 @@ import Register from '../Pages/Auth/Register';
 import Login from '../Pages/Auth/Login';
 import Dashboard from '../Pages/User/Dashboard';
 import PrivateRoute from './PrivateRoute';
+import ForgotPasssword from '../Pages/Auth/ForgotPassword';
 
 
 const AllRoutes = () => {
@@ -23,6 +24,8 @@ const AllRoutes = () => {
         <Route path="/dashboard" element={ <PrivateRoute/> }>
           <Route path="" element={<Dashboard/>}/>
         </Route>
+
+        <Route path="/forgot-password" element={<ForgotPasssword/>}/>
 
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
