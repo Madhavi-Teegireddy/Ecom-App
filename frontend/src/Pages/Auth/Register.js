@@ -1,8 +1,10 @@
 import React,{useState} from 'react'
+import axios from "axios"
 import Layout from '../../Components/Layout/Layout'
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import "../../Styles/AuthStyles.css"
+
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -13,11 +15,34 @@ const Register = () => {
   const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:8080/auth/register", {
+        name,
+        email,
+        password,
+        phone,
+        address,
+        answer,
+      });
+      if (res && res.data.success) {
+        toast.success(res.data && res.data.message);
+        navigate("/login");
+      } else {
+        toast.error(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    }
+  };
+
   return (
     <Layout title="Register - Ecommer App">
       <div className="form-container" style={{ minHeight: "90vh" }}>
         <form 
-        // onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
         >
           <h4 className="title">REGISTER FORM</h4>
           <div className="mb-3">

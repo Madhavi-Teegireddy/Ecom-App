@@ -7,6 +7,7 @@ import Contact from '../Pages/Contact';
 import Policy from '../Pages/Policy';
 import PageNotFound from '../Pages/PageNotFound';
 import Register from '../Pages/Auth/Register';
+import Login from '../Pages/Auth/Login';
 
 
 const AllRoutes = () => {
@@ -15,6 +16,7 @@ const AllRoutes = () => {
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/register" element={<Register/>}/>
+        <Route path="/login" element={<Login/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/policy" element={<Policy/>}/>
