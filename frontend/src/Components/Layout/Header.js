@@ -1,8 +1,22 @@
 import React from 'react'
 import { NavLink, Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import { useAuth } from '../../Context/Auth';
 
 
 const Header = () => {
+  const [auth, setAuth] = useAuth()
+
+    const handleLogout = () => {
+    setAuth({
+      ...auth,
+      user: null,
+      token: "",
+    });
+    localStorage.removeItem("auth");
+    toast.success("Logout Successfully");
+  };
+
   return (
     <>
 <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
@@ -19,12 +33,56 @@ const Header = () => {
         <li class="nav-item">
           <NavLink to="/category" style={{textDecoration:"none",color:"gray",marginRight:"10px"}} class="nav-link" >Category</NavLink>
         </li>         
-        <li class="nav-item">
-          <NavLink to="/register" style={{textDecoration:"none",color:"gray",marginRight:"10px"}} class="nav-link" >Register</NavLink>
-        </li>
-        <li class="nav-item">
-          <NavLink to="/login" style={{textDecoration:"none",color:"gray",marginRight:"10px"}} class="nav-link" >Login</NavLink>
-        </li>        
+              {!auth?.user ? (
+                <>
+                  <li className="nav-item" style={{marginTop:"-8px"}}>
+                    <NavLink to="/register" className="nav-link">
+                      Register
+                    </NavLink>
+                  </li>
+                  <li className="nav-item" style={{marginTop:"-8px"}}>
+                    <NavLink to="/login" className="nav-link">
+                      Login
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item dropdown" style={{marginTop:"-8px"}}>
+                    <NavLink
+                      className="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      style={{ border: "none",color:"green" }}
+                    >
+                      {auth?.user?.name}
+                    </NavLink>
+                    <ul className="dropdown-menu">
+                      <li>
+                        <NavLink
+                          to={`/dashboard/${
+                            auth?.user?.role === 1 ? "admin" : "user"
+                          }`}
+                          className="dropdown-item"
+                        >
+                          Dashboard
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          onClick={handleLogout}
+                          to="/login"
+                          className="dropdown-item"
+                          style={{ border: "none",backgroundColor:"pink", fontWeight:"900px" }}
+                        >
+                          Logout
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </li>
+                </>
+              )}       
         <li class="nav-item">
           <NavLink to="/cart" style={{textDecoration:"none",color:"gray",marginRight:"10px"}} class="nav-link" >Cart(0)</NavLink>
         </li>       
