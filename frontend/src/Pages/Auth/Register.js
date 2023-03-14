@@ -1,9 +1,18 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Layout from '../../Components/Layout/Layout'
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import "../../Styles/AuthStyles.css"
 
 const Register = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [answer, setAnswer] = useState("");
+  const navigate = useNavigate();
+
   return (
     <Layout title="Register - Ecommer App">
       <div className="form-container" style={{ minHeight: "90vh" }}>
@@ -14,7 +23,8 @@ const Register = () => {
           <div className="mb-3">
             <input
               type="text"
-            //   onChange={(e) => setName(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="form-control"
               id="exampleInputEmail1"
               placeholder="Enter Your Name"
@@ -25,7 +35,8 @@ const Register = () => {
           <div className="mb-3">
             <input
               type="email"
-            //   onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="form-control"
               id="exampleInputEmail1"
               placeholder="Enter Your Email "
@@ -35,7 +46,8 @@ const Register = () => {
           <div className="mb-3">
             <input
               type="password"
-            //   onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="form-control"
               id="exampleInputPassword1"
               placeholder="Enter Your Password"
@@ -45,7 +57,8 @@ const Register = () => {
           <div className="mb-3">
             <input
               type="text"
-            //   onChange={(e) => setPhone(e.target.value)}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               className="form-control"
               id="exampleInputEmail1"
               placeholder="Enter Your Phone"
@@ -55,23 +68,25 @@ const Register = () => {
           <div className="mb-3">
             <input
               type="text"
-            //   onChange={(e) => setAddress(e.target.value)}
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
               className="form-control"
               id="exampleInputEmail1"
               placeholder="Enter Your Address"
               required
             />
           </div>
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <input
               type="text"
+              value={answer}
             //   onChange={(e) => setAnswer(e.target.value)}
               className="form-control"
               id="exampleInputEmail1"
               placeholder="What is Your Favorite sports"
               required
             />
-          </div>
+          </div> */}
           <button type="submit" className="btn btn-primary">
             REGISTER
           </button>
