@@ -4,12 +4,12 @@ import { useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../Styles/AuthStyles.css"
 import Layout from "../../Components/Layout/Layout";
-// import { useAuth } from "../../context/auth";
+import { useAuth } from "../../Context/Auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-//   const [auth, setAuth] = useAuth();
+  const [auth, setAuth] = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,12 +24,12 @@ const Login = () => {
       });
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
-        // setAuth({
-        //   ...auth,
-        //   user: res.data.user,
-        //   token: res.data.token,
-        // });
-        // localStorage.setItem("auth", JSON.stringify(res.data));
+        setAuth({
+          ...auth,
+          user: res.data.user,
+          token: res.data.token,
+        });
+        localStorage.setItem("auth", JSON.stringify(res.data));
         navigate(location.state || "/");
       } else {
         toast.error(res.data.message);
