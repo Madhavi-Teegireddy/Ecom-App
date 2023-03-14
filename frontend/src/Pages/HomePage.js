@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../Components/Layout/Layout'
+import { useAuth } from '../Context/Auth'
 
 const HomePage = () => {
   return (
