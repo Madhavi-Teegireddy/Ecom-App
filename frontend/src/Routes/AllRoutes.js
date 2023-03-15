@@ -29,7 +29,7 @@ const AllRoutes = () => {
 
         <Route path="/dashboard" element={ <AdminRoute/> }>
           <Route path="admin" element={<AdminDashboard/>}/>
-        </Route>        
+        </Route> 
 
         <Route path="/forgot-password" element={<ForgotPasssword/>}/>
 
