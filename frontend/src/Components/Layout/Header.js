@@ -39,7 +39,7 @@ const Header = () => {
                     <NavLink to="/register" className="nav-link">
                       Register
                     </NavLink>
-                  </li>
+                  </li> 
                   <li className="nav-item" style={{marginTop:"-8px"}}>
                     <NavLink to="/login" className="nav-link">
                       Login
