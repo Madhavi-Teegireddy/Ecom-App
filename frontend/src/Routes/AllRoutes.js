@@ -13,6 +13,8 @@ import PrivateRoute from './PrivateRoute';
 import ForgotPasssword from '../Pages/Auth/ForgotPassword';
 import AdminRoute from './AdminRoute';
 import AdminDashboard from '../Pages/Admin/AdminDashboard';
+import Orders from '../Pages/User/Orders';
+import Profile from '../Pages/User/Profile';
 
 
 const AllRoutes = () => {
@@ -25,6 +27,8 @@ const AllRoutes = () => {
         
         <Route path="/dashboard" element={ <PrivateRoute/> }>
           <Route path="user" element={<Dashboard/>}/>
+          <Route path="user/orders" element={<Orders/>}/>
+          <Route path="user/profile" element={<Profile/>}/>
         </Route>              
 
         <Route path="/dashboard" element={ <AdminRoute/> }>
