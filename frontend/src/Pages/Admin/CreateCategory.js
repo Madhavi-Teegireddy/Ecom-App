@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import AdminMenu from "../../Components/Layout/AdminMenu";
 import Layout from "../../Components/Layout/Layout";
+import CategoryForm from "../../Components/Form/CategoryForm";
 // import { Modal } from "antd";
 const CreateCategory = () => {
   const [categories, setCategories] = useState([]);
@@ -94,11 +95,11 @@ const CreateCategory = () => {
           <div className="col-md-9">
             <h1>Manage Category</h1>
             <div className="p-3 w-50">
-              {/* <CategoryForm
+              <CategoryForm
                 handleSubmit={handleSubmit}
                 value={name}
                 setValue={setName}
-              /> */}
+              />
             </div>
             <div className="w-75">
               <table className="table">
