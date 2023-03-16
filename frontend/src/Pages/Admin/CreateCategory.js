@@ -4,7 +4,7 @@ import axios from "axios";
 import AdminMenu from "../../Components/Layout/AdminMenu";
 import Layout from "../../Components/Layout/Layout";
 import CategoryForm from "../../Components/Form/CategoryForm";
-// import { Modal } from "antd";
+import { Modal } from "antd";
 const CreateCategory = () => {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
@@ -15,7 +15,7 @@ const CreateCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/v1/category/create-category", {
+      const { data } = await axios.post("http://localhost:8080/category/create-category", {
         name,
       });
       if (data?.success) {
@@ -140,17 +140,17 @@ const CreateCategory = () => {
                 </tbody>
               </table>
             </div>
-            {/* <Modal
+            <Modal
               onCancel={() => setVisible(false)}
               footer={null}
               visible={visible}
-            > */}
-              {/* <CategoryForm
+            >
+              <CategoryForm
                 value={updatedName}
                 setValue={setUpdatedName}
                 handleSubmit={handleUpdate}
               />
-            </Modal> */}
+            </Modal>
           </div>
         </div>
       </div>

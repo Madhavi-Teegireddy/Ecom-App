@@ -16,6 +16,7 @@ import AdminDashboard from '../Pages/Admin/AdminDashboard';
 import Orders from '../Pages/User/Orders';
 import Profile from '../Pages/User/Profile';
 import CreateCategory from '../Pages/Admin/CreateCategory';
+import CreateProduct from '../Pages/Admin/CreateProduct';
 
 
 const AllRoutes = () => {
@@ -35,6 +36,7 @@ const AllRoutes = () => {
         <Route path="/dashboard" element={ <AdminRoute/> }>
           <Route path="admin" element={<AdminDashboard/>}/>
           <Route path="admin/create-category" element={<CreateCategory/>}/>
+          <Route path="admin/create-product" element={<CreateProduct/>}/>
         </Route> 
 
         <Route path="/forgot-password" element={<ForgotPasssword/>}/>
