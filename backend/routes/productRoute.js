@@ -26,5 +26,5 @@ router.delete("/delete-product/:pid", deleteProductController);
 //routes
 router.put("/update-product/:pid", requireSignIn, isAdmin, formidable(), updateProductController
 );
-
+ 
 export default router
