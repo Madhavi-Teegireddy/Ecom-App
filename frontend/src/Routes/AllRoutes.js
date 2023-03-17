@@ -18,6 +18,7 @@ import Profile from '../Pages/User/Profile';
 import CreateCategory from '../Pages/Admin/CreateCategory';
 import CreateProduct from '../Pages/Admin/CreateProduct';
 import Products from '../Pages/Admin/Products';
+import UpdateProduct from '../Pages/Admin/UpdateProduct';
 
 
 const AllRoutes = () => {
@@ -38,6 +39,7 @@ const AllRoutes = () => {
           <Route path="admin" element={<AdminDashboard/>}/>
           <Route path="admin/create-category" element={<CreateCategory/>}/>
           <Route path="admin/create-product" element={<CreateProduct/>}/>
+          <Route path="admin/product/:slug" element={<UpdateProduct/>}/>
           <Route path="admin/products" element={<Products/>}/>
         </Route> 
 
