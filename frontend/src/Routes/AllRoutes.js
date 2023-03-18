@@ -19,6 +19,7 @@ import CreateCategory from '../Pages/Admin/CreateCategory';
 import CreateProduct from '../Pages/Admin/CreateProduct';
 import Products from '../Pages/Admin/Products';
 import UpdateProduct from '../Pages/Admin/UpdateProduct';
+import Search from '../Pages/Search';
 
 
 const AllRoutes = () => {
@@ -26,6 +27,7 @@ const AllRoutes = () => {
     <>
       <Routes>
         <Route path="/" element={<HomePage/>} />
+         <Route path="/search" element={<Search/>} />
         <Route path="/register" element={<Register/>}/>
         <Route path="/login" element={<Login/>}/>
          

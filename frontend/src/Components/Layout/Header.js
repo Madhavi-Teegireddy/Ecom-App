@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from '../../Context/Auth';
+import SearchInput from '../Form/SearchInput';
 
 
 const Header = () => {
@@ -27,6 +28,7 @@ const Header = () => {
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
       <NavLink to="/" style={{textDecoration:"none",color:"gray",marginRight:"10px"}} class="navbar-brand"> 🛒Ecommerce App</NavLink>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <SearchInput/>
         <li class="nav-item">
           <NavLink to="/" style={{textDecoration:"none",color:"gray",marginRight:"10px"}} class="nav-link" >Home</NavLink>
         </li>
