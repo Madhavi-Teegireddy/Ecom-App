@@ -1,16 +1,17 @@
-import React from 'react'
+import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import { useAuth } from "../../Context/Auth";
 import toast from "react-hot-toast";
-import { useAuth } from '../../Context/Auth';
-import SearchInput from '../Form/SearchInput';
-import useCategory from '../../hooks/useCategory';
-
+import SearchInput from "../Form/SearchInput";
+import useCategory from "../../hooks/useCategory";
+import { Badge } from "antd";
+// import { useCart } from "../../Context/Cart";
 
 const Header = () => {
-  const [auth, setAuth] = useAuth()
+  const [auth, setAuth] = useAuth();
+  // const [cart] = useCart()
   const categories = useCategory();
-
-    const handleLogout = () => {
+  const handleLogout = () => {
     setAuth({
       ...auth,
       user: null,
@@ -19,22 +20,33 @@ const Header = () => {
     localStorage.removeItem("auth");
     toast.success("Logout Successfully");
   };
-
   return (
     <>
-<nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <NavLink to="/" style={{textDecoration:"none",color:"gray",marginRight:"10px"}} class="navbar-brand"> 🛒Ecommerce App</NavLink>
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <SearchInput/>
-        <li class="nav-item">
-          <NavLink to="/" style={{textDecoration:"none",color:"gray",marginRight:"10px"}} class="nav-link" >Home</NavLink>
-        </li> 
-              <li className="nav-item dropdown" style={{marginTop:"-8px"}}>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div className="container-fluid">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <Link to="/" className="navbar-brand">
+              🛒 Ecommerce App
+            </Link>
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <SearchInput />
+              <li className="nav-item">
+                <NavLink to="/" className="nav-link ">
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
                   to={"/categories"}
@@ -59,15 +71,16 @@ const Header = () => {
                     </li>
                   ))}
                 </ul>
-              </li>                
+              </li>
+
               {!auth?.user ? (
                 <>
-                  <li className="nav-item" style={{marginTop:"-8px"}}>
+                  <li className="nav-item">
                     <NavLink to="/register" className="nav-link">
                       Register
                     </NavLink>
-                  </li> 
-                  <li className="nav-item" style={{marginTop:"-8px"}}>
+                  </li>
+                  <li className="nav-item">
                     <NavLink to="/login" className="nav-link">
                       Login
                     </NavLink>
@@ -75,13 +88,13 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <li className="nav-item dropdown" style={{marginTop:"-8px"}}>
+                  <li className="nav-item dropdown">
                     <NavLink
                       className="nav-link dropdown-toggle"
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
-                      style={{ border: "none",color:"green" }}
+                      style={{ border: "none" }}
                     >
                       {auth?.user?.name}
                     </NavLink>
@@ -101,7 +114,6 @@ const Header = () => {
                           onClick={handleLogout}
                           to="/login"
                           className="dropdown-item"
-                          style={{ border: "none",backgroundColor:"pink", fontWeight:"900px" }}
                         >
                           Logout
                         </NavLink>
@@ -109,16 +121,20 @@ const Header = () => {
                     </ul>
                   </li>
                 </>
-              )}       
-        <li class="nav-item">
-          <NavLink to="/cart" style={{textDecoration:"none",color:"gray",marginRight:"10px"}} class="nav-link" >Cart(0)</NavLink>
-        </li>       
-      </ul>
-    </div>
-  </div>
-</nav>
+              )}
+              {/* <li className="nav-item">
+                <NavLink to="/cart" className="nav-link">
+                  <Badge count={cart?.length} showZero offset={[10, -5]}>
+                    Cart
+                  </Badge>
+                </NavLink>
+              </li> */}
+            </ul>
+          </div>
+        </div>
+      </nav>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

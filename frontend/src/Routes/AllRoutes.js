@@ -21,7 +21,6 @@ import Products from '../Pages/Admin/Products';
 import UpdateProduct from '../Pages/Admin/UpdateProduct';
 import Search from '../Pages/Search';
 import ProductDetails from '../Pages/ProductDetails';
-import CategoryForm from '../Components/Form/CategoryForm';
 import Categories from '../Pages/Categories';
 import CategoryProduct from '../Pages/CategoryProduct';
 
