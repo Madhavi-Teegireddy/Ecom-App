@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Checkbox, Radio } from "antd";
-// import { useCart } from "../context/cart";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { AiOutlineReload } from "react-icons/ai";
 import "../Styles/Homepage.css";
 import Layout from "../Components/Layout/Layout";
 import { Prices } from "../Components/Prices";
+import { useCart } from "../Context/Cart";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const [cart, setCart] = useState();
+  const [cart, setCart] = useCart();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
