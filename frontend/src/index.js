@@ -8,14 +8,17 @@ import { AuthProvider } from './Context/Auth';
 import { SearchProvider } from './Context/Search';
 
 import 'antd/dist/reset.css'
+import { CartProvider } from './Context/Cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
   <SearchProvider>
+    <CartProvider>
     <AuthProvider>
     <App />
     </AuthProvider>
+    </CartProvider>
   </SearchProvider>  
   </BrowserRouter>
 );
