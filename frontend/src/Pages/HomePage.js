@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Checkbox, Radio } from "antd";
-// import { Prices } from "../components/Prices";
 // import { useCart } from "../context/cart";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { AiOutlineReload } from "react-icons/ai";
 import "../Styles/Homepage.css";
 import Layout from "../Components/Layout/Layout";
+import { Prices } from "../Components/Prices";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -133,11 +133,11 @@ const HomePage = () => {
           <h4 className="text-center mt-4">Filter By Price</h4>
           <div className="d-flex flex-column">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-              {/* {Prices?.map((p) => (
+              {Prices?.map((p) => (
                 <div key={p._id}>
                   <Radio value={p.array}>{p.name}</Radio>
                 </div>
-              ))} */}
+              ))}
             </Radio.Group>
           </div>
           <div className="d-flex flex-column">
