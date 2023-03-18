@@ -23,6 +23,7 @@ import Search from '../Pages/Search';
 import ProductDetails from '../Pages/ProductDetails';
 import CategoryForm from '../Components/Form/CategoryForm';
 import Categories from '../Pages/Categories';
+import CategoryProduct from '../Pages/CategoryProduct';
 
 
 const AllRoutes = () => {
@@ -33,6 +34,7 @@ const AllRoutes = () => {
         <Route path="/search" element={<Search/>} />
         <Route path="/product/:slug" element={<ProductDetails/>} />
         <Route path="/categories" element={<Categories/>} />
+        <Route path="/category/:slug" element={<CategoryProduct/>} />
         <Route path="/register" element={<Register/>}/>
         <Route path="/login" element={<Login/>}/>
          
