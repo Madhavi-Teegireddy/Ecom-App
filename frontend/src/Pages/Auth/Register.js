@@ -18,7 +18,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/auth/register", {
+      const res = await axios.post("https://agreeable-helmet-fawn.cyclic.app/auth/register", {
         name,
         email,
         password,

@@ -10,7 +10,7 @@ const SearchInput = () => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/product/search/${values.keyword}`
+        `https://agreeable-helmet-fawn.cyclic.app/product/search/${values.keyword}`
       );
       setValues({ ...values, results: data });
       navigate("/search");

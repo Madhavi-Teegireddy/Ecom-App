@@ -27,7 +27,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put("http://localhost:8080/auth/profile", {
+      const { data } = await axios.put("https://agreeable-helmet-fawn.cyclic.app/auth/profile", {
         name,
         email,
         password,

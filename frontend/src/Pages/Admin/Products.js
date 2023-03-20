@@ -10,7 +10,7 @@ const Products = () => {
   //getall products
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/product/get-product");
+      const { data } = await axios.get("https://agreeable-helmet-fawn.cyclic.app/product/get-product");
       setProducts(data.products);
     } catch (error) {
       console.log(error);
@@ -39,7 +39,7 @@ const Products = () => {
               >
                 <div className="card m-2" style={{ width: "18rem" }}>
                   <img
-                    src={`http://localhost:8080/product/product-photo/${p._id}`}
+                    src={`https://agreeable-helmet-fawn.cyclic.app/product/product-photo/${p._id}`}
                     className="card-img-top"
                     alt={p.name}
                   />
