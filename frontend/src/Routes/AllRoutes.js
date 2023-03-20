@@ -24,6 +24,7 @@ import ProductDetails from '../Pages/ProductDetails';
 import Categories from '../Pages/Categories';
 import CategoryProduct from '../Pages/CategoryProduct';
 import CartPage from '../Pages/CartPage';
+import AdminOrders from '../Pages/Admin/AdminOrders';
 
 
 const AllRoutes = () => {
@@ -51,6 +52,7 @@ const AllRoutes = () => {
           <Route path="admin/create-product" element={<CreateProduct/>}/>
           <Route path="admin/product/:slug" element={<UpdateProduct/>}/>
           <Route path="admin/products" element={<Products/>}/>
+          <Route path="admin/orders" element={<AdminOrders/>}/>
         </Route> 
 
         <Route path="/forgot-password" element={<ForgotPasssword/>}/>
