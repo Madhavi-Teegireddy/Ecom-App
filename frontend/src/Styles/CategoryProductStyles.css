@@ -6,6 +6,7 @@
 .category .card {
     background-color: rgba(128, 128, 128, 0.097);
     width: 18rem;
+    border:10px solid red
 }
 
 .category .card-name-price {
