@@ -1,8 +1,7 @@
 # Ecom-App
-Ecom application
 
 # Full-Stack-Ecommerce
-TataCliq is an e-commerce website that sells fashion, accessories, electronics, home and other products. It is a collaborative project of 5 members, completed in 5 days. This is a full stack web application built on MERN Stack. by using React, Redux, MongoDB, ExpressJS, NodeJs, ChakraUi.
+This is an e-commerce website that sells fashion, accessories, electronics and other products. It is an individual project, completed in 5 days. This is a full stack web application built on MERN Stack by using React, MongoDB, ExpressJS, NodeJs, ChakraUi.
 
 
 
@@ -18,39 +17,47 @@ TataCliq is an e-commerce website that sells fashion, accessories, electronics, 
 # Feaures:
 
 # Landing Page:</br>
-Home Page consists of basic navigation menu, search bar to search for products and link to sign up/login pages. Main page consists of many carousels that lead to different sections of app. We also have a footer. This app is fully responsive. It is compatible with different device sizes. </br></br>
-<img width="940" alt="210934637-682d628e-9b98-445d-a72f-c6bb671be32b" src="https://user-images.githubusercontent.com/107460617/214089244-5e790ad4-433b-44e2-b1e1-946848abb10e.png">  </br></br>
+Home Page consists of basic navigation menu, search bar to search for products and link to sign up/login pages. Main page consists of many carousels that lead to different sections of app. We also have a footer. This app is fully responsive. It is compatible with different device sizes. </br></br> 
 
+![e1](https://user-images.githubusercontent.com/107460617/226966670-5b2a21be-6ea2-4086-8973-c4dc5a401b16.PNG)</br></br>
 
 # Search functionality:</br>
-We can search for a particular product with search bar. We will get all products relating to our search. </br></br>
-<img width="932" alt="210935965-1946b65b-f766-43b4-82f8-df54f5d98043" src="https://user-images.githubusercontent.com/107460617/214089317-b378af11-d39f-4340-9c51-374f311f8601.png">
- </br></br>
+We can search for a particular product with search bar. We will get all products related to our search. </br></br>
+
+
+ ![e2](https://user-images.githubusercontent.com/107460617/226968330-24a9bd8c-210b-4b41-806a-fb524ce5e397.PNG) </br></br>
+
 
 
 # Signup/Signin Pages:
 This is the signup page, which the user will get if he clicks on the continue button on the account page and new users can create an account here.
-This is a multi-user application. We can signup or login using our credentials. We used jwt for authentication. There is also signup with google functionality. We used OAuth and passportjs to implement this
+This is a multi-user application. We can signup or login using our credentials. We used jwt for authentication. There is also signup with google functionality. We used OAuth to implement this.
 </br></br>
-![hhhh](https://user-images.githubusercontent.com/107460617/214100354-c6698e82-e19c-4c78-85f7-cdaf04d97926.PNG)
+![e3](https://user-images.githubusercontent.com/107460617/226968870-54f3efa3-b023-4574-b488-a6a6402aa543.PNG)
+
+
 
 </br></br>
 
 This is the login page by clicking on the account option on the landing page users will be redirected to the login page if the users are existing customers they can login by the same email and password or by Facebook account or google account. If users are new customers then by clicking on continue they will be redirected to the signup page.</br></br>
-![hhhh](https://user-images.githubusercontent.com/107460617/214100768-9484c478-178d-4a55-9206-e1a7fe08ded5.PNG)
+![e4](https://user-images.githubusercontent.com/107460617/226968902-b98a95d5-f0da-42f0-a9d3-5ada8e3996a1.PNG)
 
 
 # Product Page:
 We have Products page, where we have all products of different categories. We can also filter products based on category, brand and department. We also have different sorting options.
 
 </br></br>
-<img width="922" alt="210936712-8377cd43-26fe-42e6-aaac-ab6029ba777e" src="https://user-images.githubusercontent.com/107460617/214098815-368bd152-c417-4e4b-a002-0e7046c81463.png">
-</br></br>
+![e5](https://user-images.githubusercontent.com/107460617/226969460-273e88dd-1e39-46c5-882a-5e399c27954c.PNG)
+
+</br></![e6](https://user-images.githubusercontent.com/107460617/226969478-b2dcdf64-61d7-48f4-a954-202f59e1666d.PNG)
+br>
 
 # Cart Page:
 We can add products to cart. We can also apply coupon discounts. We can increase and decrease the quantity of products and also remove products from cart. On clicking checkout, user will be redirected to payments page.
+![e7](https://user-images.githubusercontent.com/107460617/226970415-2aaef663-e5c2-4ca1-9120-c63180328ebd.PNG)
+
 </br></br>
-<img width="938" alt="210942237-424c160a-5f29-48c1-a999-9a577ba6bd3a" src="https://user-images.githubusercontent.com/107460617/214099523-9dd3c2bf-931a-4365-a0cc-eb3c471cfe8f.png">
+
 
 
 # Checkout Page:
