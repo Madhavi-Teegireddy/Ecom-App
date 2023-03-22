@@ -8,6 +8,7 @@ import "../Styles/Homepage.css";
 import Layout from "../Components/Layout/Layout";
 import { Prices } from "../Components/Prices";
 import { useCart } from "../Context/Cart";
+import Carausel from "./Carausel";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -109,12 +110,13 @@ const HomePage = () => {
   return (
     <Layout title={"ALl Products - Best offers "}>
       {/* banner image */}
-      <img
+      {/* <img
         src="/images/mi.jpg"
         className="banner-img"
         alt="bannerimage"
         width={"100%"}
-      />
+      /> */}
+      <Carausel/>
       {/* banner image */}
       <div className="container-fluid row mt-3 home-page">
         <div className="col-md-3 filters">
